@@ -36,7 +36,7 @@ filters = {
 }
 
 filter=target_filter
-st.write("**Filter Selection "+filter+ "\nMinimum wavelength   "+str(filters[filter][0])+ "\nMaximum wavelength   "+str(filters[filter][1])+ "\nResolution   "+str(filters[filter][3])+"**)
+st.write("**Filter Selection "+filter+ "\nMinimum wavelength   "+str(filters[filter][0])+ "\nMaximum wavelength   "+str(filters[filter][1])+ "\nResolution   "+str(filters[filter][3])+"**")
 
 snr,wave=scales_etc_snr(filter,itime,nframes,ab_mag)
 if "snr" not in st.session_state:
