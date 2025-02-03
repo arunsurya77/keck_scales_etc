@@ -10,7 +10,7 @@ st.title("SCALES Exposure Time Calculator")
 st.subheader("Instrument Config")
 
 # Mode Selection
-mode = st.radio("Mode", ["Imager", "IFS Low Res", "IFS Mid Res"],index=1)
+mode = st.radio("Mode", ["Imager-TODO", "IFS Low Res", "IFS Mid Res - TODO" ],index=1)
 
 # Filter Selection
 target_filter = st.selectbox("Filter", ["K", "L", "M", "CH4", "ICE","SED"],index=0)
@@ -19,7 +19,7 @@ target_filter = st.selectbox("Filter", ["K", "L", "M", "CH4", "ICE","SED"],index
 st.subheader("Source/Scene")
 
 # Source Type Selection
-source_type = st.radio("Source Type", ["Point Source", "Extended Object"],index=0)
+source_type = st.radio("Source Type", ["Point Source", "Extended Object -TODO"],index=0)
 
 # Input Fields
 ab_mag = st.number_input("AB Mag", min_value=0.0, step=0.1, format="%.1f",value=14.0)
@@ -36,7 +36,7 @@ filters = {
 }
 
 filter=target_filter
-st.write("Filter Selection "+filter+ "    Minimum wavelength   "+str(filters[filter][0])+ "    Maximum wavelength   "+str(filters[filter][1])+ "    Resolution   "+str(filters[filter][3]))
+st.write("**Filter Selection "+filter+ "\nMinimum wavelength   "+str(filters[filter][0])+ "\nMaximum wavelength   "+str(filters[filter][1])+ "\nResolution   "+str(filters[filter][3])+"**)
 
 snr,wave=scales_etc_snr(filter,itime,nframes,ab_mag)
 if "snr" not in st.session_state:
@@ -48,7 +48,7 @@ fig = go.Figure()
 fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='SNR Curve'))
 
 fig.update_layout(title="SNR of peak spaxel ",
-				  xaxis_title="Time (s)",
+				  xaxis_title="Wavelength",
 				  yaxis_title="SNR",
 				  template="plotly_white")
 
