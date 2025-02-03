@@ -3,6 +3,5 @@ plotly
 numpy
 matplotlib
 scipy
-astropy
-os
+astropy==6.1.2
 
