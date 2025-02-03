@@ -23,8 +23,8 @@ source_type = st.radio("Source Type", ["Point Source", "Extended Object -TODO"],
 
 # Input Fields
 ab_mag = st.number_input("AB Mag", min_value=0.0, step=0.1, format="%.1f",value=14.0)
-itime = st.number_input("itime", min_value=0.0, step=1.0, format="%.1f",value=30.0)
-nframes = st.number_input("nframes", min_value=1, step=1,value=1)
+itime = st.number_input("Integration time", min_value=0.0, step=1.0, format="%.1f",value=30.0)
+nframes = st.number_input("no of frames", min_value=1, step=1,value=1)
 
 filters = {
 "K" : (1.95,2.45,2.185,200),
@@ -36,7 +36,10 @@ filters = {
 }
 
 filter=target_filter
-st.write("**Filter Selection "+filter+ "\nMinimum wavelength   "+str(filters[filter][0])+ "\nMaximum wavelength   "+str(filters[filter][1])+ "\nResolution   "+str(filters[filter][3])+"**")
+st.write("###Filter:	"+filter+ "###")
+st.write("###Minimum wavelength:	"+str(filters[filter][0])+ "###")
+st.write("###Maximum wavelength:	"+str(filters[filter][1])+ "###")
+st.write("###R:   "+ str(filters[filter][3])+ "###")
 
 snr,wave=scales_etc_snr(filter,itime,nframes,ab_mag)
 if "snr" not in st.session_state:
