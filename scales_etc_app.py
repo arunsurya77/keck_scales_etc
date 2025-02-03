@@ -36,10 +36,10 @@ filters = {
 }
 
 filter=target_filter
-st.write("### Filter:	"+filter+ " ###")
-st.write("### Minimum wavelength:	"+str(filters[filter][0])+ " ###")
-st.write("### Maximum wavelength:	"+str(filters[filter][1])+ " ###")
-st.write("### R:   "+ str(filters[filter][3])+ " ###")
+st.write("** Filter:	"+filter+ " **")
+st.write("** Minimum wavelength:	"+str(filters[filter][0])+ " **")
+st.write("** Maximum wavelength:	"+str(filters[filter][1])+ " **")
+st.write("** R:   "+ str(filters[filter][3])+ " **")
 
 snr,wave=scales_etc_snr(filter,itime,nframes,ab_mag)
 if "snr" not in st.session_state:
