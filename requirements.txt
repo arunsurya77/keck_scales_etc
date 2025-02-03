@@ -2,6 +2,6 @@ streamlit
 plotly
 numpy
 matplotlib
-scipy==1.10.0
+scipy
 astropy==6.1.2
 
