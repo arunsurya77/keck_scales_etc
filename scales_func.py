@@ -67,7 +67,7 @@ def scales_etc_snr(filter,itime,nframes,mag):
     for i in range(len(psf_new)):
         psf_new[i,:,:]=psf_new[i,:,:]/psf_new[i,:,:].sum()
     filter_trans = np.ones(dxspectrum)
-    intfilter = integrate.trapz(filter_trans,wave) 
+    intfilter = integrate.trapezoid(filter_trans,wave) 
 
     spec,specwave=get_model_spectra('vega')
 
